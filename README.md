@@ -26,7 +26,7 @@ After researching the issue, I switched to using Docker as an alternative contai
 
 ## Assignment Completion
 
-Set Up Ubuntu Server Environment
+### 2. Set Up Ubuntu Server Environment
 
 **Screenshot #1: Docker Container Initialization and Access**
 
@@ -42,4 +42,19 @@ This screenshot demonstrates setting up an Ubuntu Linux environment using Docker
 
 **SSH Alternative:** Unlike Vagrant which requires SSH to access the virtual machine, Docker provides direct access to the container through the `docker exec` command. This eliminates the need for SSH configuration while providing the same isolated Linux environment for system administration practice.
 
+### 3. Explore the Linux File System
+
+**Screenshot #2: Custom Folder Structure Creation**
+
+![Linux Directory Structure](screenshots/screenshot2.png)
+
+**Description:**
+This screenshot shows exploring the Linux file system and creating a custom directory structure. The commands demonstrate:
+
+1. **Navigation** to `/home` directory
+2. **Creating nested directories** with `mkdir -p vagrant/projects/devops`
+3. **Listing directory contents** with `ls -la` to verify the folder structure
+4. **The created structure**: `/home/vagrant/projects/devops`
+
+The `-p` flag in `mkdir` creates parent directories as needed, which is essential for creating nested directory structures in a single command.
 
