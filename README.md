@@ -57,7 +57,6 @@ This screenshot shows exploring the Linux file system and creating a custom dire
 4. **The created structure**: `/home/vagrant/projects/devops`
 
 The `-p` flag in `mkdir` creates parent directories as needed, which is essential for creating nested directory structures in a single command.
-
 ### 4. Manage File Permissions and Ownership
 
 **Screenshot #3: File Permissions and Ownership Management**
@@ -65,25 +64,17 @@ The `-p` flag in `mkdir` creates parent directories as needed, which is essentia
 ![File Permissions and Ownership](screenshots/screenshot3.png)
 
 **Description:**
-This screenshot demonstrates Linux file permissions and ownership management using `chmod` and `chown` commands. The sequence shows:
+This screenshot demonstrates changing file permissions and ownership using `chmod` and `chown` commands:
 
-1. **File Creation**: Created `test-file.txt` and `another-file.txt` with default permissions
-2. **Initial Permissions**: Files created with `-rw-r--r--` (644) permissions - owner can read/write, group and others can only read
-3. **Permission Changes with chmod**:
-   - `chmod 740 test-file.txt` - Changed to `-rwxr-----` (owner: read/write/execute, group: read, others: no access)
-   - `chmod 755 another-file.txt` - Changed to `-rwxr-xr-x` (owner: read/write/execute, group/others: read/execute)
-4. **User Creation**: Added `testuser` using `useradd testuser`
-5. **Ownership Changes with chown**:
-   - `chown testuser test-file.txt` - Changed owner from `root` to `testuser`
-   - `chown testuser:testuser another-file.txt` - Changed both owner and group to `testuser`
+1. **Created test files** with default permissions (`-rw-r--r--`)
+2. **Changed permissions** using `chmod 740` and `chmod 755`
+3. **Created new user** `testuser` 
+4. **Changed ownership** using `chown testuser`
 
-**Permission Values Explained:**
-- **740**: Owner (7=rwx), Group (4=r--), Others (0=---)
-- **755**: Owner (7=rwx), Group (5=r-x), Others (5=r-x)
-- The first character indicates file type (- for regular file, d for directory)
-- Following 9 characters represent permissions in groups of 3: owner, group, others
-- Each group uses rwx notation: r=read(4), w=write(2), x=execute(1)
+**Permission Values:**
+- **740**: Owner can read/write/execute (7), group can read (4), others have no access (0)
+- **755**: Owner can read/write/execute (7), group and others can read/execute (5)
+- **Format**: `owner:group` shows file ownership
 
-
-**Ownership Format**: `owner:group` - shows who owns the file and which group has group permissions.
+The numbers represent permission levels where read=4, write=2, execute=1, and they add up for combined permissions.
 
