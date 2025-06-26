@@ -78,3 +78,29 @@ This screenshot demonstrates changing file permissions and ownership using `chmo
 
 The numbers represent permission levels where read=4, write=2, execute=1, and they add up for combined permissions.
 
+
+### 5. Install and Configure a Package
+
+**Screenshot #4: Package Installation and Configuration**
+
+![Package Installation and Configuration](screenshots/screenshot4.png)
+
+**Description:**
+This screenshot demonstrates installing a package using Ubuntu's package manager. The process shows:
+
+1. **Package update** with `apt update` - refreshing the package repository lists
+2. **Package installation** with `apt install curl -y` - installing the curl package
+3. **Version verification** with `curl --version` - confirming successful installation
+4. **Installation confirmation** with `apt list --installed | grep curl` - verifying the package is installed
+
+**Package Management Explained:**
+- `apt update` downloads the latest package information from repositories
+- `apt install` downloads and installs the specified package with dependencies
+- The `-y` flag automatically answers "yes" to installation prompts
+- Version checking confirms the package is working correctly
+
+This demonstrates basic Linux package management skills essential for system administration.
+
+
+
+
