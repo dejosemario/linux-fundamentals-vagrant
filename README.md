@@ -101,6 +101,26 @@ This screenshot demonstrates installing a package using Ubuntu's package manager
 
 This demonstrates basic Linux package management skills essential for system administration.
 
+### 6. Test Remote Connectivity
 
+**Screenshot #5: Network Connectivity Testing**
+
+![Network Connectivity Test](screenshots/screenshot5.png)
+
+**Description:**
+This screenshot demonstrates testing network connectivity using the `ping` command to verify internet access:
+
+1. **IP connectivity test** with `ping -c 4 8.8.8.8` - testing direct connection to Google's DNS server
+2. **Domain name test** with `ping -c 4 google.com` - testing both DNS resolution and connectivity
+3. **Successful results** showing 0% packet loss and response times
+4. **Network statistics** displaying minimum, average, and maximum response times
+
+**Ping Results Explained:**
+- **0% packet loss** indicates reliable network connection
+- **Response times** of 45-187ms show acceptable network latency
+- **DNS resolution** confirms that domain names can be properly resolved to IP addresses
+- **TTL values** show network routing is functioning correctly
+
+This demonstrates that the container has full internet connectivity and can resolve domain names, essential for downloading packages and accessing external resources.
 
 
