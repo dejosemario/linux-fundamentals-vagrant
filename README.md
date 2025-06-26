@@ -58,3 +58,32 @@ This screenshot shows exploring the Linux file system and creating a custom dire
 
 The `-p` flag in `mkdir` creates parent directories as needed, which is essential for creating nested directory structures in a single command.
 
+### 4. Manage File Permissions and Ownership
+
+**Screenshot #3: File Permissions and Ownership Management**
+
+![File Permissions and Ownership](screenshots/screenshot3.png)
+
+**Description:**
+This screenshot demonstrates Linux file permissions and ownership management using `chmod` and `chown` commands. The sequence shows:
+
+1. **File Creation**: Created `test-file.txt` and `another-file.txt` with default permissions
+2. **Initial Permissions**: Files created with `-rw-r--r--` (644) permissions - owner can read/write, group and others can only read
+3. **Permission Changes with chmod**:
+   - `chmod 740 test-file.txt` - Changed to `-rwxr-----` (owner: read/write/execute, group: read, others: no access)
+   - `chmod 755 another-file.txt` - Changed to `-rwxr-xr-x` (owner: read/write/execute, group/others: read/execute)
+4. **User Creation**: Added `testuser` using `useradd testuser`
+5. **Ownership Changes with chown**:
+   - `chown testuser test-file.txt` - Changed owner from `root` to `testuser`
+   - `chown testuser:testuser another-file.txt` - Changed both owner and group to `testuser`
+
+**Permission Values Explained:**
+- **740**: Owner (7=rwx), Group (4=r--), Others (0=---)
+- **755**: Owner (7=rwx), Group (5=r-x), Others (5=r-x)
+- The first character indicates file type (- for regular file, d for directory)
+- Following 9 characters represent permissions in groups of 3: owner, group, others
+- Each group uses rwx notation: r=read(4), w=write(2), x=execute(1)
+
+
+**Ownership Format**: `owner:group` - shows who owns the file and which group has group permissions.
+
